@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+/*
+font-family: 'Barlow Semi Condensed', sans-serif;
+*/
+
+:root {
+    --moderate-violet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+
+    /* "Verified Graduate" has the same color as the 
+    person's name with 50% opacity**/
+
+    /*Review paragraphs inside the 
+    quotations have the same color as well, 
+    but are at 70% opacity*/
+}
+
+
+/* ===== Global Styles ===== */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-color: var(--light-grayish-blue);
+    padding: 2em;
+}
+
+main {
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    gap: 2em;
+    max-width: 375px;
+}
+
+.card {
+    border-radius: 10px;
+    padding: 2em;
+    position: relative;
+    z-index: 1;
+}
+
+.testimony-pic {
+    border-radius: 50%;
+}
+
+/* ===== Grouping the Name, Status and Picture of the testimony; more of a general grouping =====*/
+.testimony-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/* ===== The text of Name and Status of the testimony =====*/
+.testimony-info-text {
+    margin-left: 1rem;
+    line-height: 1.2;
+}
+
+.testimony-name {
+    color: white;
+}
+
+.testimony-status {
+    color: white;
+    opacity: 50%;
+}
+
+/* ===== Testimonies Quote ===== */
+section>h2 {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+/* ===== Testimonies' Story ===== */
+section>p {
+    color: var(--light-gray);
+    font-size: 1rem;
+    opacity: 70%;
+}
+
+/* Clifford Card */
+section:nth-of-type(1) {
+    background-color: var(--moderate-violet);
+}
+
+.quote-symbol{
+    position: absolute;
+    z-index: -1;
+    transform: translateY(-30%);
+    left: 60%;
+}
+
+.clifford-pic{
+    border: solid rgb(175, 125, 254);
+}
+
+/* Walter Card */
+section:nth-of-type(2) {
+    background-color: var(--very-dark-grayish-blue);
+}
+
+/*=========== Card Colors and Styles  ========== */
+
+/* Harmon Card */
+section:nth-of-type(3) {
+    background-color: white;
+}
+
+/* Abrams Card */
+section:nth-of-type(4) {
+    background-color: var(--very-dark-blackish-blue);
+}
+
+.abrams-pic{
+    border: solid var(--moderate-violet);
+}
+
+/* Whittle Card */
+section:nth-of-type(5) {
+    background-color: white;
+}
+
+
+/* Testimonies that have a white background */
+section:nth-child(2n+3)>h2 {
+    color: var(--very-dark-grayish-blue);
+}
+
+section:nth-child(2n+3)>div>div>.testimony-name {
+    color: var(--very-dark-grayish-blue);
+}
+
+section:nth-child(2n+3)>div>div>.testimony-status {
+    color: var(--very-dark-grayish-blue);
+    opacity: 50%;
+}
+
+section:nth-child(2n+3)>p {
+    color: var(--very-dark-grayish-blue);
+}
+
+
+/* Footer */
+
+footer {
+    display: flex;
+    justify-content: center;
+    font-size: .5rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
+@media screen and (min-width: 1080px) {
+
+    main {
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1440px;
+    }
+
+    section:nth-of-type(1) {
+        grid-column: 1/3;
+    }
+
+    section:nth-of-type(3) {
+        grid-column: 1/1;
+    }
+
+    section:nth-of-type(4) {
+        grid-column: 2/4;
+    }
+
+    section:nth-of-type(5) {
+        grid-column: 4/4;
+        grid-row: 1/3;
+    }
+
+    footer{
+        font-size: 1rem;
+    }
+}
